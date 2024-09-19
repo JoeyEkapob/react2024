@@ -1,4 +1,7 @@
-import { useState,useEffect } from "react";
+import Mycomponent from './component.js/mycomponent';
+import './hello.css';
+
+ const { useState,useEffect } = require('react'); 
 
 function Hello(){
     /* const [name,setname] = useState('joey')
@@ -55,7 +58,7 @@ function Hello(){
     return<>
         <div> useEffect example </div>
     </> */
-    const [items,setItems] = useState([]);
+   /*  const [items,setItems] = useState([]);
     useEffect(() => {
         console.log('start page');
 
@@ -72,6 +75,32 @@ function Hello(){
     </button>
 
     
+    </> */
+  /*   return <>
+        <div className="bg-danger text-white p-4"><i className="fa fa-home"></i>hello</div>
+        <Mycomponent name='sdfdsf'/>
+    </> */
+
+    const [name,setname] = useState('');
+    const [email,setEmail] = useState('');
+
+    const handleSingIn = () =>{
+        console.log(name , email);
+    }
+    return <>
+    <div className='container p-5'>
+        <div>
+            <div>Name</div>
+            <input className='form-control' onChange={e=>setname(e.target.value)}/>
+        </div>
+        <div className='mt-3'>
+            <div>email</div>
+            <input className='form-control' onChange={e=>setEmail(e.target.value)}/>
+        </div>
+        <button className='btn btn-primary mt-3' onClick={handleSingIn}>
+            <i className='fa fa-check me-2'></i>Sing In
+          </button>  
+    </div>
     </>
 
 
