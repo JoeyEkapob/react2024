@@ -1,6 +1,7 @@
 import Mycomponent from './component.js/mycomponent';
 import './hello.css';
 import axios from "axios";
+import config from './config';
 
  const { useState,useEffect } = require('react'); 
 
@@ -184,9 +185,9 @@ function Hello(){
             </button>
         </div>
     </> */
-    const deletemethod = async ()=>{
+  /*   const deletemethod = async ()=>{
         try{
-            await axios.delete('http://localhost:3001/book/remove/1')
+            await axios.delete('http://localhost:3001/orderDetail/remove/1')
         }catch (e){
             console.log(e)
         }
@@ -195,6 +196,45 @@ function Hello(){
     <div>
         <button className='btn btn-primary' onClick={deletemethod}> Call api </button>
     </div>
-    </>
+    </> */
+   /*  const deletemethod = async () =>{
+        try{
+            await axios.get('http://localhost:3001/user/info/',{
+                headers:{
+                    'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAwLCJuYW1lIjoiam9leSIsImxldmVsIjoiYWRtaW4iLCJpYXQiOjE3MjcxODk2MTUsImV4cCI6MTcyNzI3NjAxNX0.YD4sN55ES75VX5Rneao0Xt1bHO8BNFbi7DDD_w53B7Y'
+                }
+            })
+        }catch(e){
+            console.log( e )
+            
+        }
+    }
+    return <>
+    <div>
+    <button className='btn btn-primary' onClick={deletemethod}>
+        call api
+        </button>
+
+
+    </div>
+    </> */
+
+    const deletemethod = async () =>{
+        try{
+            await axios.get(config.apiPath + '/user/info/', config.headersValue)
+        }catch(e){
+            console.log( e )
+            
+        }
+    }
+    return <>
+    <div>
+    <button className='btn btn-primary' onClick={deletemethod}>
+        call api
+        </button>
+
+
+    </div>
+    </> 
 }
 export default Hello;
