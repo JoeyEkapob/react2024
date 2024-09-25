@@ -219,7 +219,7 @@ function Hello(){
     </div>
     </> */
 
-    const deletemethod = async () =>{
+    /* const deletemethod = async () =>{
         try{
             await axios.get(config.apiPath + '/user/info/', config.headersValue)
         }catch(e){
@@ -235,6 +235,55 @@ function Hello(){
 
 
     </div>
-    </> 
+    </>  */
+
+/*     const [fileselected , setfileSelected] = useState({});
+    const selectedfile = (fileinput)=>{
+        if (fileinput !== undefined){
+            if(fileinput.length > 0 ){
+                setfileSelected(fileinput[0])
+            }
+        }
+    }
+
+    const uploadfile = async () => {
+        try{
+            const formData = new FormData();
+            formData.append('myfile',fileselected)
+
+            await axios.post(config.apiPath + '/book/upload/',formData,{
+                headers:{
+                    'Content-Type':'multpart/from-data'
+                }
+            })
+        }catch (e){
+            console.log(e)
+        }
+    }
+    return <>
+    <div>
+        
+        <input type='file' onChange={e=>selectedfile(e.target.files)}/>
+        <button className='btn btn-primary' onClick={uploadfile}>
+            upload
+            </button>
+    </div>
+    
+    
+    </> */
+
+    return <>
+    <div className='row'>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>1</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>2</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>3</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>4</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>5</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>6</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>7</div>
+        <div className='col-xxl-2 col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'>8</div>
+      
+    </div>
+    </>
 }
 export default Hello;
